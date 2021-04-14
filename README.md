@@ -23,10 +23,11 @@ on:
 name: Split
 jobs:
   tag:
+    runs-on: ubuntu-20.04
     steps:
       - name: "split"
         id: split
-        uses: tanaphonble/tag-splitter-action@v1
+        uses: tanaphonble/tag-splitter-action@v0.0.6
       - name: "set env"
-        run: echo "Name=${{steps.tag.outputs.split.name}} Version=${{steps.tag.outputs.split.name}}"
+        run: echo "Name=${{steps.split.outputs.name}} Version=${{steps.split.outputs.version}}"
 ```
