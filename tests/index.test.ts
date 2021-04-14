@@ -27,10 +27,10 @@ describe("tag-splitter-action", () => {
     });
 
     it("split GITHUB_REF tags correctly", () => {
-      const input = "refs/heads/my-service-2#2.0.0";
+      const input = "refs/tags/my-service-3#3.0.0";
       const expectedOutput = {
-        name: "my-service-2",
-        version: "2.0.0",
+        name: "my-service-3",
+        version: "3.0.0",
         success: true,
       };
 
