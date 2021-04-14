@@ -1,0 +1,10 @@
+name: "Tag Splitter"
+description: "Tag splitter action"
+outputs:
+  name:
+    description: "Service name from tag"
+  version:
+    description: "Version number of service"
+runs:
+  using: "node12"
+  main: "src/main.js"
