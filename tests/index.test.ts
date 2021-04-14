@@ -14,7 +14,19 @@ describe("tag-splitter-action", () => {
       expect(splitTag(input)).toStrictEqual(expectedOutput);
     });
 
-    it("split GITHUB_REF correctly", () => {
+    it("split GITHUB_REF heads correctly", () => {
+      const input = "refs/heads/my-service-2#2.0.0";
+      const expectedOutput = {
+        name: "my-service-2",
+        version: "2.0.0",
+        success: true,
+      };
+
+      const tag = splitTag(input);
+      expect(tag).toStrictEqual(expectedOutput);
+    });
+
+    it("split GITHUB_REF tags correctly", () => {
       const input = "refs/heads/my-service-2#2.0.0";
       const expectedOutput = {
         name: "my-service-2",
