@@ -1,0 +1,23 @@
+{
+  "name": "tag-splitter-action",
+  "version": "1.0.0",
+  "description": "Tag splitter",
+  "main": "index.js",
+  "author": "Tanaphon Auanhinkong",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --testTimeout 10000"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.7",
+    "@actions/exec": "^1.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/jest": "^26.0.22",
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3"
+  }
+}
