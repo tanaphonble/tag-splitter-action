@@ -1,9 +1,10 @@
 import * as core from "@actions/core";
 import action from "./action";
+import { splitTag } from "./usecase";
 
-async function run() {
+function run() {
   try {
-    await action();
+    action(splitTag);
   } catch (error) {
     core.setFailed(error.message);
   }

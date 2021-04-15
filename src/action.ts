@@ -1,13 +1,25 @@
 import * as core from "@actions/core";
-import { splitTag } from "./usecase";
+interface Tag {
+  name?: string;
+  version?: string;
+  success: boolean;
+}
 
-export default async () => {
+interface SplitterFunc {
+  (tag: string): Tag;
+}
+
+export default (splitter: SplitterFunc) => {
   const { GITHUB_REF } = process.env;
-  const tag = splitTag(`${GITHUB_REF}`);
+  const tag = splitter(`${GITHUB_REF}`);
+
+  if (!tag.success) {
+    throw new Error(
+      "invalid tag, format must be name#versiob e.g. my-application#v1.0.0"
+    );
+  }
+
   console.log("tag", tag);
-
-  if (!tag.success) core.setFailed("invalid tag");
-
   console.log("set name:", tag.name);
   core.setOutput("name", tag.name);
   console.log("set version:", tag.version);

@@ -1,6 +1,6 @@
 import { splitTag } from "../src/usecase";
 
-describe("tag-splitter-action", () => {
+describe("usecase test", () => {
   describe("normal case", () => {
     it("split tag correctly", () => {
       const input = "my-service-1#1.0.0";
