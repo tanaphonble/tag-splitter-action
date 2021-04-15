@@ -27,7 +27,7 @@ jobs:
     steps:
       - name: "split"
         id: split
-        uses: tanaphonble/tag-splitter-action@v0.0.6
+        uses: tanaphonble/tag-splitter-action@v1.0.1
       - name: "set env"
         run: echo "Name=${{steps.split.outputs.name}} Version=${{steps.split.outputs.version}}"
 ```
